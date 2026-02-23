@@ -231,6 +231,7 @@ body {
     align-items: center;
     gap: 6px;
     margin-left: 24px;
+    text-decoration: none;
 }
 
 .cta-button::after {
