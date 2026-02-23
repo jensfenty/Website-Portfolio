@@ -473,16 +473,50 @@ body {
 
 /* ── About Page ── */
 .about-section {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: flex-end;
     height: calc(100vh - 70px);
-    padding: 80px 0 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.about-hero-left {
+    align-self: center;
+    padding-right: 40px;
+    padding-bottom: 40px;
+}
+
+.about-hello {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0 0 2px;
+    color: white;
+    line-height: 1.4;
+}
+
+.about-name {
+    font-size: 4.8rem;
+    font-weight: 800;
+    line-height: 1.0;
+    margin: 0 0 20px;
+    color: white;
+    letter-spacing: -0.02em;
+}
+
+.about-bio {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 400px;
+    color: rgba(255,255,255,0.82);
+    font-weight: 400;
+    margin: 0;
 }
 
 .about-portrait {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-end;
     align-self: flex-end;
     height: 100%;
@@ -506,6 +540,41 @@ body {
     align-self: center;
     text-align: left;
     padding-left: 60px;
+}
+
+/* About section responsive */
+@media (max-width: 768px) {
+    .about-section {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 60px 30px 0;
+        gap: 40px;
+    }
+
+    .about-hero-left {
+        padding-right: 0;
+        padding-bottom: 0;
+        order: 2;
+        text-align: center;
+    }
+
+    .about-bio {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .about-name {
+        font-size: 3rem;
+    }
+
+    .about-portrait {
+        order: 1;
+        justify-content: center;
+    }
+
+    .about-portrait img {
+        height: 50vh;
+    }
 }
 
 /* ── Separator ── */
@@ -2325,6 +2394,19 @@ body {
 .light-mode .tools-dot {
     background: rgba(10, 13, 26, 0.2);
     border-color: rgba(10, 13, 26, 0.15);
+}
+
+/* About hero */
+.light-mode .about-hello {
+    color: #0a0d1a;
+}
+
+.light-mode .about-name {
+    color: #0a0d1a;
+}
+
+.light-mode .about-bio {
+    color: rgba(10, 13, 26, 0.75);
 }
 
 /* About page */
