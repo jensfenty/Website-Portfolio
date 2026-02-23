@@ -2300,7 +2300,9 @@ body {
     color: rgba(10, 13, 26, 0.55);
 }
 
-.light-mode .hero-title {
+.light-mode .hero-title,
+.light-mode .description-default,
+.light-mode .description-hover {
     color: #0a0d1a;
 }
 
@@ -2323,12 +2325,6 @@ body {
 .light-mode .tools-dot {
     background: rgba(10, 13, 26, 0.2);
     border-color: rgba(10, 13, 26, 0.15);
-}
-
-.light-mode .tools-item:not(.left) .tools-right,
-.light-mode .tools-item.left .tools-left {
-    background: rgba(255, 255, 255, 0.6);
-    border-color: rgba(10, 13, 26, 0.08);
 }
 
 /* About page */
@@ -2360,17 +2356,61 @@ body {
     color: #3d5aa8;
 }
 
-/* Projects / carousel */
-.light-mode .acc-card {
-    border-color: rgba(10, 13, 26, 0.12);
+/* Skills */
+.light-mode .skill-tag {
+    color: #0a0d1a;
+    border-color: rgba(10, 13, 26, 0.3);
 }
 
-.light-mode .acc-label {
+.light-mode .skill-tag:hover {
+    background: rgba(74, 95, 217, 0.1);
+    border-color: #3d5aa8;
+}
+
+/* Timeline */
+.light-mode .timeline-heading {
+    color: #0a0d1a;
+}
+
+.light-mode .timeline-line {
+    background: rgba(10, 13, 26, 0.15);
+}
+
+.light-mode .timeline-dot {
+    background: rgba(10, 13, 26, 0.2);
+    border-color: rgba(10, 13, 26, 0.3);
+}
+
+.light-mode .timeline-title {
+    color: #0a0d1a;
+}
+
+.light-mode .timeline-desc {
     color: rgba(10, 13, 26, 0.75);
 }
 
-.light-mode .acc-icon {
+.light-mode .timeline-role-label {
     color: rgba(10, 13, 26, 0.5);
+}
+
+/* HubSpot badges */
+.light-mode .hubspot-badge {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(10, 13, 26, 0.12);
+    color: #0a0d1a;
+}
+
+.light-mode .hubspot-badge-name {
+    color: #0a0d1a;
+}
+
+/* Projects / carousel */
+.light-mode .acc-label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.light-mode .acc-icon {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Why Hire Me */
