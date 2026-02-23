@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>(function(){if(localStorage.getItem('theme')==='light')document.documentElement.classList.add('light-mode');}());</script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -26,6 +27,9 @@
                     <li><a href="blog.html" aria-current="page">Blogs</a></li>
                 </ul>
                 <a href="https://mail.google.com/mail/?view=cm&to=erickaferguson22@gmail.com&su=Hello%20Ericka%20Mae%20Gavino" target="_blank" rel="noopener noreferrer" class="cta-button">Get in Touch</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+                    <span class="theme-toggle-icon">🌙</span>
+                </button>
             </div>
         </nav>
     </header>
@@ -139,6 +143,23 @@
                 if (target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
             });
         });
+    </script>
+
+    <script>
+        (function() {
+            const btn = document.getElementById('themeToggle');
+            const icon = btn.querySelector('.theme-toggle-icon');
+            function apply(mode) {
+                document.documentElement.classList.toggle('light-mode', mode === 'light');
+                icon.textContent = mode === 'light' ? '\u2600\ufe0f' : '\ud83c\udf19';
+            }
+            apply(localStorage.getItem('theme') || 'dark');
+            btn.addEventListener('click', function() {
+                const next = document.documentElement.classList.contains('light-mode') ? 'dark' : 'light';
+                localStorage.setItem('theme', next);
+                apply(next);
+            });
+        })();
     </script>
 </body>
 </html>
