@@ -479,7 +479,7 @@ body {
     height: calc(100vh - 70px);
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 0 0 0 80px;
 }
 
 .about-hero-left {
@@ -503,12 +503,13 @@ body {
     margin: 0 0 20px;
     color: white;
     letter-spacing: -0.02em;
+    white-space: nowrap;
 }
 
 .about-bio {
     font-size: 0.9rem;
     line-height: 1.6;
-    max-width: 400px;
+    max-width: 520px;
     color: rgba(255,255,255,0.82);
     font-weight: 400;
     margin: 0;
@@ -565,6 +566,7 @@ body {
 
     .about-name {
         font-size: 3rem;
+        white-space: normal;
     }
 
     .about-portrait {
