@@ -1943,9 +1943,67 @@ body {
 /* ── Article / Blog Post Pages ── */
 
 .article-section {
-    max-width: 760px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 40px 100px;
+    padding: 120px 60px 100px;
+}
+
+.article-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.article-main {
+    min-width: 0;
+}
+
+/* Sticky TOC sidebar */
+.toc-sidebar {
+    position: sticky;
+    top: 110px;
+}
+
+.toc-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 14px;
+}
+
+.toc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.toc-link {
+    display: block;
+    font-size: 0.81rem;
+    color: rgba(255, 255, 255, 0.42);
+    text-decoration: none;
+    padding: 7px 12px;
+    border-left: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0 6px 6px 0;
+    line-height: 1.4;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.toc-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+    border-left-color: rgba(125, 169, 255, 0.4);
+    background: rgba(125, 169, 255, 0.05);
+}
+
+.toc-link.active {
+    color: #7da9ff;
+    border-left-color: #7da9ff;
+    background: rgba(125, 169, 255, 0.08);
+    font-weight: 500;
 }
 
 .article-back {
@@ -2088,6 +2146,40 @@ body {
     }
     .blog-page-title {
         font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 960px) {
+    .article-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .toc-sidebar {
+        position: static;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 20px 24px;
+        margin-bottom: 48px;
+    }
+    .toc-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .toc-link {
+        border-left: none;
+        border-radius: 50px;
+        padding: 5px 14px;
+        background: rgba(255, 255, 255, 0.05);
+        font-size: 0.8rem;
+    }
+    .toc-link.active {
+        background: rgba(125, 169, 255, 0.15);
+        border-left: none;
+    }
+    .toc-link:hover {
+        border-left: none;
     }
 }
 

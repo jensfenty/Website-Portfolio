@@ -40,7 +40,25 @@
                 </a>
             </div>
 
-            <header class="article-header">
+            <div class="article-layout">
+
+                <aside class="toc-sidebar" aria-label="Table of contents">
+                    <p class="toc-title">On this page</p>
+                    <nav>
+                        <ul class="toc-list">
+                            <li><a class="toc-link" href="#mindset-shift">The Mindset Shift</a></li>
+                            <li><a class="toc-link" href="#basics">The Basics</a></li>
+                            <li><a class="toc-link" href="#aria">ARIA Usage</a></li>
+                            <li><a class="toc-link" href="#colour-palettes">Colour Palettes</a></li>
+                            <li><a class="toc-link" href="#testing">Testing</a></li>
+                            <li><a class="toc-link" href="#good-design">Good Design</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <div class="article-main">
+
+                <header class="article-header">
                 <div class="article-cats">
                     <span class="blog-cat design">Design</span>
                     <span class="blog-cat development">Development</span>
@@ -59,12 +77,12 @@
 
                 <p class="article-lead">Accessibility is one of those things that sounds optional until you realise it never was — it just wasn't enforced. Here's what years of building real products taught me about making the web actually work for everyone.</p>
 
-                <h2>The Mindset Shift That Changed Everything</h2>
+                <h2 id="mindset-shift">The Mindset Shift That Changed Everything</h2>
                 <p>For a long time I thought of accessibility as a compliance requirement — a checklist that large companies worry about for legal reasons. Screen reader support, alt text on images, skip links. Check, check, check.</p>
                 <p>The shift happened when I started thinking about accessibility not as a set of rules for edge cases, but as a measure of how well a product works for all of its users — including the people who are tired, distracted, using an old phone, in bright sunlight, or navigating with a keyboard because their mouse died.</p>
                 <p>That's when the checklist became a design philosophy.</p>
 
-                <h2>The Basics That Make the Biggest Difference</h2>
+                <h2 id="basics">The Basics That Make the Biggest Difference</h2>
                 <p>Not all accessibility improvements are equal. These four have the widest impact relative to the effort they require:</p>
 
                 <p><strong>1. Colour contrast.</strong> WCAG AA requires a contrast ratio of 4.5:1 for normal text and 3:1 for large text. I use Figma's built-in contrast checker and browser dev tools to verify this before committing to a palette. Low contrast text doesn't just fail audits — it's genuinely hard to read for a huge proportion of your users, not just those with visual impairments.</p>
@@ -75,16 +93,16 @@
 
                 <p><strong>4. Alternative text.</strong> Every image that conveys information needs a descriptive <code>alt</code> attribute. Every decorative image should have <code>alt=""</code> so screen readers skip it. The rule of thumb: if you removed the image and replaced it with the alt text, would the user still understand the content? If yes, you've written good alt text.</p>
 
-                <h2>ARIA: Use It Less Than You Think You Should</h2>
+                <h2 id="aria">ARIA: Use It Less Than You Think You Should</h2>
                 <p>ARIA (Accessible Rich Internet Applications) attributes let you describe the role, state, and properties of custom UI components. They're powerful — and dangerously easy to misuse.</p>
                 <p>The first rule of ARIA is: don't use ARIA if you can use a native HTML element instead. A <code>&lt;button&gt;</code> doesn't need <code>role="button"</code>. An <code>&lt;input type="checkbox"&gt;</code> doesn't need <code>aria-checked</code>. Overusing ARIA creates false signals that confuse assistive technology.</p>
                 <p>Where ARIA genuinely earns its place: custom components that have no native HTML equivalent. A custom dropdown menu, a tab panel, a live notification region, a data grid. In those cases, ARIA provides the semantic layer that native HTML can't.</p>
 
-                <h2>Designing Accessible Colour Palettes</h2>
+                <h2 id="colour-palettes">Designing Accessible Colour Palettes</h2>
                 <p>One practical thing I learned from designing dark-themed interfaces: it's easy to pass contrast for large bold headings and fail it for body copy. The mistake is checking only your primary text colour against your primary background. You need to check every combination — placeholder text on inputs, caption text on cards, inactive nav items.</p>
                 <p>I now build colour palettes with accessibility in mind from the start, not as a retrofit. The question isn't "does this look good?" — it's "does this look good AND pass contrast for the text sizes where I'll use it?"</p>
 
-                <h2>Testing Beyond Dev Tools</h2>
+                <h2 id="testing">Testing Beyond Dev Tools</h2>
                 <p>Automated tools like Lighthouse and axe catch about 30% of accessibility issues. The rest require human judgement. My testing process for any interface:</p>
                 <ul>
                     <li>Run Lighthouse accessibility audit and fix all errors</li>
@@ -94,7 +112,7 @@
                     <li>Test on a slow 3G connection — do loading states communicate clearly?</li>
                 </ul>
 
-                <h2>Accessibility Is Good Design</h2>
+                <h2 id="good-design">Accessibility Is Good Design</h2>
                 <p>Every accessibility improvement I've made has also improved the experience for users without disabilities. Clear contrast benefits everyone reading in sunlight. Keyboard navigation helps power users. Good alt text improves SEO. Semantic HTML makes code easier to maintain.</p>
                 <p>Accessibility isn't a constraint on good design — it's a measure of it. The most inclusive interfaces are usually the most intuitive ones. That's not a coincidence.</p>
 
@@ -107,7 +125,30 @@
                 </a>
             </footer>
 
+                </div><!-- .article-main -->
+            </div><!-- .article-layout -->
+
         </article>
     </main>
+
+    <script>
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const headings = Array.from(tocLinks).map(l => document.querySelector(l.getAttribute('href')));
+        function updateTOC() {
+            const scrollY = window.scrollY + 130;
+            let active = 0;
+            headings.forEach((h, i) => { if (h && h.offsetTop <= scrollY) active = i; });
+            tocLinks.forEach((l, i) => l.classList.toggle('active', i === active));
+        }
+        window.addEventListener('scroll', updateTOC, { passive: true });
+        updateTOC();
+        tocLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>

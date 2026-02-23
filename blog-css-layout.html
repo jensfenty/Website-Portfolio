@@ -40,7 +40,24 @@
                 </a>
             </div>
 
-            <header class="article-header">
+            <div class="article-layout">
+
+                <aside class="toc-sidebar" aria-label="Table of contents">
+                    <p class="toc-title">On this page</p>
+                    <nav>
+                        <ul class="toc-list">
+                            <li><a class="toc-link" href="#complementary">Not Competing</a></li>
+                            <li><a class="toc-link" href="#flexbox">When to Use Flexbox</a></li>
+                            <li><a class="toc-link" href="#grid">When to Use Grid</a></li>
+                            <li><a class="toc-link" href="#day-to-day">The Rule I Use</a></li>
+                            <li><a class="toc-link" href="#nesting">A Note on Nesting</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <div class="article-main">
+
+                <header class="article-header">
                 <div class="article-cats">
                     <span class="blog-cat development">Development</span>
                 </div>
@@ -58,7 +75,7 @@
 
                 <p class="article-lead">This is one of those questions that comes up in every front-end conversation. The short answer? They solve different problems. Here's how I actually decide which one to reach for.</p>
 
-                <h2>They're Not Competing — They're Complementary</h2>
+                <h2 id="complementary">They're Not Competing — They're Complementary</h2>
                 <p>The framing of "Grid vs Flexbox" is a bit misleading. They were designed with different use cases in mind, and in most real layouts, the best answer is both — Grid for the page-level structure, Flexbox for the internal alignment of components.</p>
                 <p>But if you're just starting to build an intuition for when to use which, here's the mental model I use:</p>
                 <ul>
@@ -66,7 +83,7 @@
                     <li><strong>Grid</strong> — two dimensions. You're placing items into rows and columns at the same time. Think page layouts, photo galleries, dashboards, anything structural.</li>
                 </ul>
 
-                <h2>When I Reach for Flexbox</h2>
+                <h2 id="flexbox">When I Reach for Flexbox</h2>
                 <p>Flexbox shines when the layout is content-driven — meaning the sizes of items determine the layout, not a predefined structure.</p>
                 <p>A navigation bar is the perfect example. I don't know how many items will be in it, and I want them to space themselves out naturally. <code>display: flex; gap: 8px; align-items: center;</code> does that perfectly with almost no effort.</p>
                 <p>Other Flexbox sweet spots:</p>
@@ -77,7 +94,7 @@
                     <li>Aligning the icon and label inside a button</li>
                 </ul>
 
-                <h2>When I Reach for Grid</h2>
+                <h2 id="grid">When I Reach for Grid</h2>
                 <p>Grid is the right choice when I have a predetermined structure I want items to occupy — slots that exist whether or not there's content in them.</p>
                 <p>A project card grid is a perfect Grid example. I want three columns. I want them to be equal width. I want the gap consistent. <code>display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;</code> — done.</p>
                 <p>Grid also unlocks layout patterns that Flexbox simply can't do cleanly:</p>
@@ -88,11 +105,11 @@
                     <li>True two-dimensional alignment where both rows and columns matter</li>
                 </ul>
 
-                <h2>The Rule I Actually Use Day-to-Day</h2>
+                <h2 id="day-to-day">The Rule I Actually Use Day-to-Day</h2>
                 <p>Ask yourself: "Am I thinking about rows AND columns at the same time?" If yes — Grid. If you're only thinking about one direction — Flexbox.</p>
                 <p>And when in doubt, I start with Grid for the outer container and Flexbox for the inner one. Nine times out of ten that covers whatever I'm building.</p>
 
-                <h2>A Note on Nesting</h2>
+                <h2 id="nesting">A Note on Nesting</h2>
                 <p>Don't be afraid to nest them. A Grid layout where each cell contains a Flex component is completely normal — and it's often the cleanest solution. There's no penalty for mixing them, and forcing one approach to do the job of both leads to unnecessarily complex code.</p>
                 <p>The goal is readable, maintainable CSS. Use whichever tool makes that easier for the problem in front of you.</p>
 
@@ -105,7 +122,30 @@
                 </a>
             </footer>
 
+                </div><!-- .article-main -->
+            </div><!-- .article-layout -->
+
         </article>
     </main>
+
+    <script>
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const headings = Array.from(tocLinks).map(l => document.querySelector(l.getAttribute('href')));
+        function updateTOC() {
+            const scrollY = window.scrollY + 130;
+            let active = 0;
+            headings.forEach((h, i) => { if (h && h.offsetTop <= scrollY) active = i; });
+            tocLinks.forEach((l, i) => l.classList.toggle('active', i === active));
+        }
+        window.addEventListener('scroll', updateTOC, { passive: true });
+        updateTOC();
+        tocLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>

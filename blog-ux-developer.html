@@ -40,7 +40,24 @@
                 </a>
             </div>
 
-            <header class="article-header">
+            <div class="article-layout">
+
+                <aside class="toc-sidebar" aria-label="Table of contents">
+                    <p class="toc-title">On this page</p>
+                    <nav>
+                        <ul class="toc-list">
+                            <li><a class="toc-link" href="#code-users">Code vs Usability</a></li>
+                            <li><a class="toc-link" href="#ux-thinking">UX Thinking</a></li>
+                            <li><a class="toc-link" href="#patterns">Interaction Patterns</a></li>
+                            <li><a class="toc-link" href="#changed-code">How It Changed My Code</a></li>
+                            <li><a class="toc-link" href="#where-start">Where to Start</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <div class="article-main">
+
+                <header class="article-header">
                 <div class="article-cats">
                     <span class="blog-cat design">Design</span>
                     <span class="blog-cat career">Career</span>
@@ -59,12 +76,12 @@
 
                 <p class="article-lead">You can write technically flawless code and still build something that frustrates every person who uses it. UX thinking is what closes that gap.</p>
 
-                <h2>Code Runs Perfectly. Users Still Get Confused.</h2>
+                <h2 id="code-users">Code Runs Perfectly. Users Still Get Confused.</h2>
                 <p>Early in my development work, I measured success by whether something worked — did it render? Did the function return the right value? Did the layout match the spec? Those are necessary questions, but they're not sufficient ones.</p>
                 <p>The thing I kept running into was that "working" and "usable" are completely different standards. A form can submit successfully and still leave a user confused about what went wrong when they made a mistake. A navigation menu can function perfectly and still be impossible to find on a mobile screen.</p>
                 <p>It wasn't until I started spending serious time in UX — user flows, wireframes, usability testing — that I understood why some of my "working" products felt broken to the people using them.</p>
 
-                <h2>What UX Thinking Actually Means for a Developer</h2>
+                <h2 id="ux-thinking">What UX Thinking Actually Means for a Developer</h2>
                 <p>It's not about learning Figma or becoming a visual designer. It's about asking a different set of questions before you write code:</p>
                 <ul>
                     <li><strong>Who is this for?</strong> Not "who asked me to build it," but who will be clicking, tapping, reading, and interacting with it. Their context, their goals, their frustrations.</li>
@@ -73,21 +90,21 @@
                     <li><strong>Does this feel responsive in the human sense, not just the CSS sense?</strong> Does feedback happen fast enough? Do hover states and transitions communicate what's interactive? Does the page feel alive or static?</li>
                 </ul>
 
-                <h2>The Interaction Patterns Worth Learning Cold</h2>
+                <h2 id="patterns">The Interaction Patterns Worth Learning Cold</h2>
                 <p>There are patterns that appear in almost every interface, and understanding the UX reasoning behind them makes you implement them better:</p>
                 <p><strong>Progressive disclosure</strong> — show users only what they need, when they need it. Don't dump all settings on a single screen. This is why toggles, accordions, and modals exist.</p>
                 <p><strong>Affordance</strong> — visual cues that tell users something is clickable. An underline on text, a border on a button, a pointer cursor. These aren't decoration — they're instructions.</p>
                 <p><strong>Feedback loops</strong> — every action deserves a response. Button pressed? Change its state. Form submitting? Show a spinner. Upload complete? Confirm it visibly. The absence of feedback breeds uncertainty, and uncertainty creates frustration.</p>
                 <p><strong>Fitts's Law</strong> — larger click targets are easier to hit. This is why mobile buttons should be at least 44×44px, why CTAs are big, and why close buttons on mobile modals belong in the corner, not the center.</p>
 
-                <h2>How This Changed My Code</h2>
+                <h2 id="changed-code">How This Changed My Code</h2>
                 <p>When I started applying UX principles while coding — not just reading about them — a few things changed immediately:</p>
                 <p>I started writing more semantic HTML, because the right element communicates meaning to both browsers and users. A <code>&lt;button&gt;</code> tells a screen reader and a keyboard user something a <code>&lt;div onclick&gt;</code> never does.</p>
                 <p>I started handling error states before building happy paths. "What does this look like when the API fails?" became a question I asked before writing the success case.</p>
                 <p>I started questioning designs. Not dismissively — but constructively. "This flow requires four steps to complete one action. Is there a way to do it in two?"</p>
                 <p>That last one is the biggest shift. UX thinking gives you the vocabulary and the framework to be a collaborator in the design process, not just an executor of specs.</p>
 
-                <h2>Where to Start</h2>
+                <h2 id="where-start">Where to Start</h2>
                 <p>You don't need to overhaul your skill set. Start small: the next time you build a form, think through every error state before writing the submit handler. The next time you build a navigation, think about what the most common destination is and make it the most accessible one.</p>
                 <p>Ask "why" about the designs you implement. Not to challenge them — but to understand them deeply enough to implement them with intent.</p>
                 <p>That curiosity is the beginning of thinking like a UX designer.</p>
@@ -101,7 +118,30 @@
                 </a>
             </footer>
 
+                </div><!-- .article-main -->
+            </div><!-- .article-layout -->
+
         </article>
     </main>
+
+    <script>
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const headings = Array.from(tocLinks).map(l => document.querySelector(l.getAttribute('href')));
+        function updateTOC() {
+            const scrollY = window.scrollY + 130;
+            let active = 0;
+            headings.forEach((h, i) => { if (h && h.offsetTop <= scrollY) active = i; });
+            tocLinks.forEach((l, i) => l.classList.toggle('active', i === active));
+        }
+        window.addEventListener('scroll', updateTOC, { passive: true });
+        updateTOC();
+        tocLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
