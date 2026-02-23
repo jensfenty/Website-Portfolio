@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What building real projects taught me about web accessibility — from contrast ratios and keyboard navigation to ARIA roles and inclusive design thinking.">
+    <meta name="author" content="Ericka Gavino">
+    <title>Designing for Accessibility | Ericka Gavino Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <nav class="top-nav" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="contact.html" class="logo" aria-label="Ericka Gavino – go to contact page">
+                    <img src="IMG/ERICKA-GAVINO-PERSONAL-LOGO.png" alt="Ericka Gavino personal logo" class="logo-image">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#projects">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html" aria-current="page">Blogs</a></li>
+                </ul>
+                <button class="cta-button">Get in Touch</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <article class="article-section" aria-labelledby="article-title">
+
+            <div class="article-back">
+                <a href="blog.html" class="article-back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                    Back to Blog
+                </a>
+            </div>
+
+            <header class="article-header">
+                <div class="article-cats">
+                    <span class="blog-cat design">Design</span>
+                    <span class="blog-cat development">Development</span>
+                </div>
+                <h1 class="article-title" id="article-title">Designing for Accessibility: What Real Projects Taught Me</h1>
+                <div class="article-byline">
+                    <span>By <strong>Ericka Mae Gavino</strong></span>
+                    <span class="article-dot" aria-hidden="true">·</span>
+                    <time datetime="2026-02-01">February 1, 2026</time>
+                    <span class="article-dot" aria-hidden="true">·</span>
+                    <span>8 min read</span>
+                </div>
+            </header>
+
+            <div class="article-body">
+
+                <p class="article-lead">Accessibility is one of those things that sounds optional until you realise it never was — it just wasn't enforced. Here's what years of building real products taught me about making the web actually work for everyone.</p>
+
+                <h2>The Mindset Shift That Changed Everything</h2>
+                <p>For a long time I thought of accessibility as a compliance requirement — a checklist that large companies worry about for legal reasons. Screen reader support, alt text on images, skip links. Check, check, check.</p>
+                <p>The shift happened when I started thinking about accessibility not as a set of rules for edge cases, but as a measure of how well a product works for all of its users — including the people who are tired, distracted, using an old phone, in bright sunlight, or navigating with a keyboard because their mouse died.</p>
+                <p>That's when the checklist became a design philosophy.</p>
+
+                <h2>The Basics That Make the Biggest Difference</h2>
+                <p>Not all accessibility improvements are equal. These four have the widest impact relative to the effort they require:</p>
+
+                <p><strong>1. Colour contrast.</strong> WCAG AA requires a contrast ratio of 4.5:1 for normal text and 3:1 for large text. I use Figma's built-in contrast checker and browser dev tools to verify this before committing to a palette. Low contrast text doesn't just fail audits — it's genuinely hard to read for a huge proportion of your users, not just those with visual impairments.</p>
+
+                <p><strong>2. Semantic HTML.</strong> The single highest-leverage accessibility improvement you can make is using the right element for the job. <code>&lt;button&gt;</code> instead of <code>&lt;div&gt;</code>. <code>&lt;nav&gt;</code> instead of <code>&lt;div class="nav"&gt;</code>. <code>&lt;main&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>. These elements carry built-in meaning that screen readers and browsers rely on. You get keyboard support, focus management, and document structure for free.</p>
+
+                <p><strong>3. Keyboard navigation.</strong> Tab through your interface before shipping it. Every interactive element — links, buttons, form inputs, modals — should be reachable and operable without a mouse. Focus styles should be visible (don't remove <code>outline</code> without replacing it). Modals should trap focus while open and return it to the trigger when closed.</p>
+
+                <p><strong>4. Alternative text.</strong> Every image that conveys information needs a descriptive <code>alt</code> attribute. Every decorative image should have <code>alt=""</code> so screen readers skip it. The rule of thumb: if you removed the image and replaced it with the alt text, would the user still understand the content? If yes, you've written good alt text.</p>
+
+                <h2>ARIA: Use It Less Than You Think You Should</h2>
+                <p>ARIA (Accessible Rich Internet Applications) attributes let you describe the role, state, and properties of custom UI components. They're powerful — and dangerously easy to misuse.</p>
+                <p>The first rule of ARIA is: don't use ARIA if you can use a native HTML element instead. A <code>&lt;button&gt;</code> doesn't need <code>role="button"</code>. An <code>&lt;input type="checkbox"&gt;</code> doesn't need <code>aria-checked</code>. Overusing ARIA creates false signals that confuse assistive technology.</p>
+                <p>Where ARIA genuinely earns its place: custom components that have no native HTML equivalent. A custom dropdown menu, a tab panel, a live notification region, a data grid. In those cases, ARIA provides the semantic layer that native HTML can't.</p>
+
+                <h2>Designing Accessible Colour Palettes</h2>
+                <p>One practical thing I learned from designing dark-themed interfaces: it's easy to pass contrast for large bold headings and fail it for body copy. The mistake is checking only your primary text colour against your primary background. You need to check every combination — placeholder text on inputs, caption text on cards, inactive nav items.</p>
+                <p>I now build colour palettes with accessibility in mind from the start, not as a retrofit. The question isn't "does this look good?" — it's "does this look good AND pass contrast for the text sizes where I'll use it?"</p>
+
+                <h2>Testing Beyond Dev Tools</h2>
+                <p>Automated tools like Lighthouse and axe catch about 30% of accessibility issues. The rest require human judgement. My testing process for any interface:</p>
+                <ul>
+                    <li>Run Lighthouse accessibility audit and fix all errors</li>
+                    <li>Tab through the entire page with only the keyboard</li>
+                    <li>Enable a screen reader (VoiceOver on Mac, NVDA on Windows) and navigate the page as a first-time user would</li>
+                    <li>Test at 200% browser zoom — does the layout still work?</li>
+                    <li>Test on a slow 3G connection — do loading states communicate clearly?</li>
+                </ul>
+
+                <h2>Accessibility Is Good Design</h2>
+                <p>Every accessibility improvement I've made has also improved the experience for users without disabilities. Clear contrast benefits everyone reading in sunlight. Keyboard navigation helps power users. Good alt text improves SEO. Semantic HTML makes code easier to maintain.</p>
+                <p>Accessibility isn't a constraint on good design — it's a measure of it. The most inclusive interfaces are usually the most intuitive ones. That's not a coincidence.</p>
+
+            </div>
+
+            <footer class="article-footer">
+                <a href="blog.html" class="article-back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                    Back to all articles
+                </a>
+            </footer>
+
+        </article>
+    </main>
+</body>
+</html>

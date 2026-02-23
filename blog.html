@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog by Ericka Gavino – articles on front-end development, UI/UX design, and the craft of building for the web.">
+    <meta name="author" content="Ericka Gavino">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Blog | Ericka Gavino – Front-End Developer &amp; UI/UX Designer">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="IMG/ERICKA-GAVINO-PORTRAIT.png">
+    <title>Blog | Ericka Gavino – Front-End Developer &amp; UI/UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <nav class="top-nav" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="contact.html" class="logo" aria-label="Ericka Gavino – go to contact page">
+                    <img src="IMG/ERICKA-GAVINO-PERSONAL-LOGO.png" alt="Ericka Gavino personal logo" class="logo-image">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#projects">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html" aria-current="page">Blogs</a></li>
+                </ul>
+                <button class="cta-button">Get in Touch</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="blog-section" aria-labelledby="blog-heading">
+
+            <!-- Page Header -->
+            <div class="blog-page-header">
+                <p class="blog-eyebrow">My Blog</p>
+                <h1 class="blog-page-title" id="blog-heading">Journal &amp; Insights</h1>
+                <p class="blog-page-sub">Thoughts on front-end development, UI/UX design, and building things for the web.</p>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="blog-filters" role="list" aria-label="Filter articles by category">
+                <button class="blog-filter-btn active" data-filter="all" role="listitem">All</button>
+                <button class="blog-filter-btn" data-filter="Design" role="listitem">Design</button>
+                <button class="blog-filter-btn" data-filter="Development" role="listitem">Development</button>
+                <button class="blog-filter-btn" data-filter="Career" role="listitem">Career</button>
+            </div>
+
+            <!-- Featured Article -->
+            <a href="blog-figma-to-code.html" class="blog-featured" aria-label="Read: From Figma to Code">
+                <div class="blog-featured-text">
+                    <div class="blog-meta-row">
+                        <span class="blog-cat design">Design</span>
+                        <span class="blog-cat development">Development</span>
+                        <span class="blog-read-time">6 min read</span>
+                    </div>
+                    <h2 class="blog-featured-title">From Figma to Code:<br>How I Bridge Design &amp; Development</h2>
+                    <p class="blog-featured-excerpt">Most designers hand off specs and most developers interpret them. I do both — here's the exact workflow I follow to turn high-fidelity Figma frames into pixel-perfect, responsive HTML and CSS without losing the design intent along the way.</p>
+                    <span class="blog-read-cta">
+                        Read Article
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </span>
+                </div>
+                <div class="blog-featured-visual" aria-hidden="true">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&h=500&fit=crop&q=80" alt="" class="blog-thumb-img">
+                </div>
+            </a>
+
+            <!-- Article Grid -->
+            <div class="blog-grid" role="list">
+
+                <!-- Card 2 -->
+                <a href="blog-css-layout.html" class="blog-card" role="listitem" aria-label="Read: CSS Grid vs Flexbox" data-categories="Development">
+                    <div class="blog-card-visual" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&h=280&fit=crop&q=80" alt="" class="blog-thumb-img">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta-row">
+                            <span class="blog-cat development">Development</span>
+                            <span class="blog-read-time">5 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">CSS Grid vs Flexbox: Choosing the Right Tool for Every Layout</h3>
+                        <p class="blog-card-excerpt">Both are powerful — but they solve different problems. A practical breakdown of when to reach for Grid and when Flexbox is the better fit.</p>
+                        <span class="blog-read-more">Read more →</span>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="blog-ux-developer.html" class="blog-card" role="listitem" aria-label="Read: UX Thinking for Developers" data-categories="Design Career">
+                    <div class="blog-card-visual" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&h=280&fit=crop&q=80" alt="" class="blog-thumb-img">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta-row">
+                            <span class="blog-cat design">Design</span>
+                            <span class="blog-cat career">Career</span>
+                            <span class="blog-read-time">7 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">Why Every Front-End Developer Should Think Like a UX Designer</h3>
+                        <p class="blog-card-excerpt">Writing clean code is only half the job. Here's why understanding user empathy and interaction patterns made me a significantly better developer.</p>
+                        <span class="blog-read-more">Read more →</span>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="blog-accessibility.html" class="blog-card" role="listitem" aria-label="Read: Designing for Accessibility" data-categories="Design Development">
+                    <div class="blog-card-visual" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1614107151491-6876eecbff89?w=600&h=280&fit=crop&q=80" alt="" class="blog-thumb-img">
+                    </div>
+                    <div class="blog-card-body">
+                        <div class="blog-meta-row">
+                            <span class="blog-cat design">Design</span>
+                            <span class="blog-cat development">Development</span>
+                            <span class="blog-read-time">8 min read</span>
+                        </div>
+                        <h3 class="blog-card-title">Designing for Accessibility: What Real Projects Taught Me</h3>
+                        <p class="blog-card-excerpt">Accessibility isn't a checklist — it's a mindset. From contrast ratios to ARIA labels, here's what I learned building real-world projects.</p>
+                        <span class="blog-read-more">Read more →</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Category filter
+        const btns = document.querySelectorAll('.blog-filter-btn');
+        const cards = document.querySelectorAll('.blog-card');
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.dataset.filter;
+                cards.forEach(card => {
+                    const cats = card.dataset.categories || '';
+                    card.style.display = (filter === 'all' || cats.includes(filter)) ? '' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Why understanding UX design principles makes you a better front-end developer — empathy, interaction patterns, and building things that actually work for people.">
+    <meta name="author" content="Ericka Gavino">
+    <title>Think Like a UX Designer | Ericka Gavino Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <nav class="top-nav" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="contact.html" class="logo" aria-label="Ericka Gavino – go to contact page">
+                    <img src="IMG/ERICKA-GAVINO-PERSONAL-LOGO.png" alt="Ericka Gavino personal logo" class="logo-image">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#projects">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html" aria-current="page">Blogs</a></li>
+                </ul>
+                <button class="cta-button">Get in Touch</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <article class="article-section" aria-labelledby="article-title">
+
+            <div class="article-back">
+                <a href="blog.html" class="article-back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                    Back to Blog
+                </a>
+            </div>
+
+            <header class="article-header">
+                <div class="article-cats">
+                    <span class="blog-cat design">Design</span>
+                    <span class="blog-cat career">Career</span>
+                </div>
+                <h1 class="article-title" id="article-title">Why Every Front-End Developer Should Think Like a UX Designer</h1>
+                <div class="article-byline">
+                    <span>By <strong>Ericka Mae Gavino</strong></span>
+                    <span class="article-dot" aria-hidden="true">·</span>
+                    <time datetime="2026-01-15">January 15, 2026</time>
+                    <span class="article-dot" aria-hidden="true">·</span>
+                    <span>7 min read</span>
+                </div>
+            </header>
+
+            <div class="article-body">
+
+                <p class="article-lead">You can write technically flawless code and still build something that frustrates every person who uses it. UX thinking is what closes that gap.</p>
+
+                <h2>Code Runs Perfectly. Users Still Get Confused.</h2>
+                <p>Early in my development work, I measured success by whether something worked — did it render? Did the function return the right value? Did the layout match the spec? Those are necessary questions, but they're not sufficient ones.</p>
+                <p>The thing I kept running into was that "working" and "usable" are completely different standards. A form can submit successfully and still leave a user confused about what went wrong when they made a mistake. A navigation menu can function perfectly and still be impossible to find on a mobile screen.</p>
+                <p>It wasn't until I started spending serious time in UX — user flows, wireframes, usability testing — that I understood why some of my "working" products felt broken to the people using them.</p>
+
+                <h2>What UX Thinking Actually Means for a Developer</h2>
+                <p>It's not about learning Figma or becoming a visual designer. It's about asking a different set of questions before you write code:</p>
+                <ul>
+                    <li><strong>Who is this for?</strong> Not "who asked me to build it," but who will be clicking, tapping, reading, and interacting with it. Their context, their goals, their frustrations.</li>
+                    <li><strong>What is the most common action on this page?</strong> Whatever it is — that thing should be the most prominent, the most accessible, the one that requires the fewest clicks.</li>
+                    <li><strong>What happens when something goes wrong?</strong> Error states are often an afterthought in development. In UX, they're a first-class design problem. A good error message is worth more than a dozen animations.</li>
+                    <li><strong>Does this feel responsive in the human sense, not just the CSS sense?</strong> Does feedback happen fast enough? Do hover states and transitions communicate what's interactive? Does the page feel alive or static?</li>
+                </ul>
+
+                <h2>The Interaction Patterns Worth Learning Cold</h2>
+                <p>There are patterns that appear in almost every interface, and understanding the UX reasoning behind them makes you implement them better:</p>
+                <p><strong>Progressive disclosure</strong> — show users only what they need, when they need it. Don't dump all settings on a single screen. This is why toggles, accordions, and modals exist.</p>
+                <p><strong>Affordance</strong> — visual cues that tell users something is clickable. An underline on text, a border on a button, a pointer cursor. These aren't decoration — they're instructions.</p>
+                <p><strong>Feedback loops</strong> — every action deserves a response. Button pressed? Change its state. Form submitting? Show a spinner. Upload complete? Confirm it visibly. The absence of feedback breeds uncertainty, and uncertainty creates frustration.</p>
+                <p><strong>Fitts's Law</strong> — larger click targets are easier to hit. This is why mobile buttons should be at least 44×44px, why CTAs are big, and why close buttons on mobile modals belong in the corner, not the center.</p>
+
+                <h2>How This Changed My Code</h2>
+                <p>When I started applying UX principles while coding — not just reading about them — a few things changed immediately:</p>
+                <p>I started writing more semantic HTML, because the right element communicates meaning to both browsers and users. A <code>&lt;button&gt;</code> tells a screen reader and a keyboard user something a <code>&lt;div onclick&gt;</code> never does.</p>
+                <p>I started handling error states before building happy paths. "What does this look like when the API fails?" became a question I asked before writing the success case.</p>
+                <p>I started questioning designs. Not dismissively — but constructively. "This flow requires four steps to complete one action. Is there a way to do it in two?"</p>
+                <p>That last one is the biggest shift. UX thinking gives you the vocabulary and the framework to be a collaborator in the design process, not just an executor of specs.</p>
+
+                <h2>Where to Start</h2>
+                <p>You don't need to overhaul your skill set. Start small: the next time you build a form, think through every error state before writing the submit handler. The next time you build a navigation, think about what the most common destination is and make it the most accessible one.</p>
+                <p>Ask "why" about the designs you implement. Not to challenge them — but to understand them deeply enough to implement them with intent.</p>
+                <p>That curiosity is the beginning of thinking like a UX designer.</p>
+
+            </div>
+
+            <footer class="article-footer">
+                <a href="blog.html" class="article-back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                    Back to all articles
+                </a>
+            </footer>
+
+        </article>
+    </main>
+</body>
+</html>

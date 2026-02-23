@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How I bridge the gap between Figma design and front-end code – my workflow from high-fidelity mockup to live website.">
+    <meta name="author" content="Ericka Gavino">
+    <title>From Figma to Code | Ericka Gavino Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <nav class="top-nav" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="contact.html" class="logo" aria-label="Ericka Gavino – go to contact page">
+                    <img src="IMG/ERICKA-GAVINO-PERSONAL-LOGO.png" alt="Ericka Gavino personal logo" class="logo-image">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#projects">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html" aria-current="page">Blogs</a></li>
+                </ul>
+                <button class="cta-button">Get in Touch</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <article class="article-section" aria-labelledby="article-title">
+
+            <div class="article-back">
+                <a href="blog.html" class="article-back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                    Back to Blog
+                </a>
+            </div>
+
+            <header class="article-header">
+                <div class="article-cats">
+                    <span class="blog-cat design">Design</span>
+                    <span class="blog-cat development">Development</span>
+                </div>
+                <h1 class="article-title" id="article-title">From Figma to Code: How I Bridge Design &amp; Development</h1>
+                <div class="article-byline">
+                    <span>By <strong>Ericka Mae Gavino</strong></span>
+                    <span class="article-dot" aria-hidden="true">·</span>
+                    <time datetime="2026-02-10">February 10, 2026</time>
+                    <span class="article-dot" aria-hidden="true">·</span>
+                    <span>6 min read</span>
+                </div>
+            </header>
+
+            <div class="article-body">
+
+                <p class="article-lead">Most people treat design and development as two separate phases. I treat them as one continuous conversation — and it changed the way I build everything.</p>
+
+                <h2>The Problem With the "Handoff" Mentality</h2>
+                <p>In many teams, the workflow looks like this: a designer creates a stunning mockup in Figma, exports assets, writes a few notes in a comment thread, and hands it off. The developer then spends the next few days trying to interpret spacing values, argue about whether a font is 500 or 600 weight, and rebuild components they don't fully understand.</p>
+                <p>I've been on both sides of that wall. And the truth is — the wall itself is the problem.</p>
+                <p>When I design a component in Figma, I'm already thinking about how it'll be built. I name layers the way I'd name CSS classes. I use Auto Layout the same way I'd think about Flexbox. I don't just design a card — I design a reusable card component with states.</p>
+
+                <h2>My Figma Setup Before I Write a Single Line of Code</h2>
+                <p>Before opening VS Code, I run through this checklist:</p>
+                <ul>
+                    <li><strong>Design tokens first.</strong> I set up a local styles library in Figma — colours, type scale, spacing units. These map directly to CSS custom properties later.</li>
+                    <li><strong>Auto Layout everywhere.</strong> If a container won't be constrained in the browser, it shouldn't be constrained in Figma. Auto Layout forces me to think in terms of flex and grid direction from the start.</li>
+                    <li><strong>Break the design into components.</strong> Buttons, cards, nav items, form inputs — each one has its own Figma component. In code, each one has its own CSS class.</li>
+                    <li><strong>Export nothing until the design is final.</strong> Exporting too early creates versioning chaos. I finish the design, then write all the HTML/CSS at once.</li>
+                </ul>
+
+                <h2>Translating Visual Decisions into Code</h2>
+                <p>Here's the most practical part. When I look at a Figma frame and start translating it:</p>
+                <p><strong>Spacing</strong> — I inspect the padding and gap values in Figma and immediately map them to my CSS spacing scale. If Figma shows 24px padding, that becomes <code>padding: 24px</code> or a custom property like <code>var(--space-6)</code>.</p>
+                <p><strong>Typography</strong> — I never eyeball font sizes. Figma's inspect panel gives exact values. I set them in <code>rem</code> so they scale with user preferences — <code>1.5rem</code> for 24px base.</p>
+                <p><strong>Colour</strong> — Every hex I use in CSS comes directly from the Figma styles panel. No approximations. No "it looks close enough."</p>
+                <p><strong>Shadows and borders</strong> — Figma's drop shadow values (x, y, blur, spread, colour) translate directly to CSS <code>box-shadow</code>. I copy them exactly.</p>
+
+                <h2>The Part Most Tutorials Skip: Responsive Behaviour</h2>
+                <p>A Figma frame is a fixed canvas. The browser is not. The biggest bridge I build between design and code isn't about pixels — it's about thinking through how a layout breaks at 768px, 480px, and everything in between.</p>
+                <p>My rule: I design at 1440px desktop width, then before writing any CSS, I sketch (even on paper) what a 375px mobile layout should look like. Not a perfect mockup — just a rough sense of what stacks, what hides, and what scales. That sketch prevents 80% of responsive bugs before they happen.</p>
+
+                <h2>What This Workflow Actually Saves</h2>
+                <p>Doing both design and development in my own projects has taught me that the best code often comes from a designer's mind. Knowing why something looks the way it does — the intention behind a colour choice, a border radius, a hover animation — means I can implement it faithfully and make informed decisions when the design doesn't account for an edge case.</p>
+                <p>If you're a front-end developer who hasn't spent time in Figma, I'd genuinely encourage you to try it — not just as a viewer, but as a builder. And if you're a designer who hasn't written HTML and CSS, the same applies in reverse.</p>
+                <p>The best digital products I've seen come from people who don't fully identify as one or the other.</p>
+
+            </div>
+
+            <footer class="article-footer">
+                <a href="blog.html" class="article-back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                    Back to all articles
+                </a>
+            </footer>
+
+        </article>
+    </main>
+</body>
+</html>

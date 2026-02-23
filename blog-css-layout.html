@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A practical comparison of CSS Grid and Flexbox — when to use which, and why choosing the right one matters for your layouts.">
+    <meta name="author" content="Ericka Gavino">
+    <title>CSS Grid vs Flexbox | Ericka Gavino Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header role="banner">
+        <nav class="top-nav" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="contact.html" class="logo" aria-label="Ericka Gavino – go to contact page">
+                    <img src="IMG/ERICKA-GAVINO-PERSONAL-LOGO.png" alt="Ericka Gavino personal logo" class="logo-image">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#projects">Experience</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html" aria-current="page">Blogs</a></li>
+                </ul>
+                <button class="cta-button">Get in Touch</button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <article class="article-section" aria-labelledby="article-title">
+
+            <div class="article-back">
+                <a href="blog.html" class="article-back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                    Back to Blog
+                </a>
+            </div>
+
+            <header class="article-header">
+                <div class="article-cats">
+                    <span class="blog-cat development">Development</span>
+                </div>
+                <h1 class="article-title" id="article-title">CSS Grid vs Flexbox: Choosing the Right Tool for Every Layout</h1>
+                <div class="article-byline">
+                    <span>By <strong>Ericka Mae Gavino</strong></span>
+                    <span class="article-dot" aria-hidden="true">·</span>
+                    <time datetime="2026-01-28">January 28, 2026</time>
+                    <span class="article-dot" aria-hidden="true">·</span>
+                    <span>5 min read</span>
+                </div>
+            </header>
+
+            <div class="article-body">
+
+                <p class="article-lead">This is one of those questions that comes up in every front-end conversation. The short answer? They solve different problems. Here's how I actually decide which one to reach for.</p>
+
+                <h2>They're Not Competing — They're Complementary</h2>
+                <p>The framing of "Grid vs Flexbox" is a bit misleading. They were designed with different use cases in mind, and in most real layouts, the best answer is both — Grid for the page-level structure, Flexbox for the internal alignment of components.</p>
+                <p>But if you're just starting to build an intuition for when to use which, here's the mental model I use:</p>
+                <ul>
+                    <li><strong>Flexbox</strong> — one dimension. You're arranging items along a single axis (row or column). Think nav bars, button groups, card interiors, or aligning an icon next to text.</li>
+                    <li><strong>Grid</strong> — two dimensions. You're placing items into rows and columns at the same time. Think page layouts, photo galleries, dashboards, anything structural.</li>
+                </ul>
+
+                <h2>When I Reach for Flexbox</h2>
+                <p>Flexbox shines when the layout is content-driven — meaning the sizes of items determine the layout, not a predefined structure.</p>
+                <p>A navigation bar is the perfect example. I don't know how many items will be in it, and I want them to space themselves out naturally. <code>display: flex; gap: 8px; align-items: center;</code> does that perfectly with almost no effort.</p>
+                <p>Other Flexbox sweet spots:</p>
+                <ul>
+                    <li>Centering something both vertically and horizontally inside a container</li>
+                    <li>Making a footer stick to the bottom of a page</li>
+                    <li>Wrapping tag pills or chips in a component</li>
+                    <li>Aligning the icon and label inside a button</li>
+                </ul>
+
+                <h2>When I Reach for Grid</h2>
+                <p>Grid is the right choice when I have a predetermined structure I want items to occupy — slots that exist whether or not there's content in them.</p>
+                <p>A project card grid is a perfect Grid example. I want three columns. I want them to be equal width. I want the gap consistent. <code>display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;</code> — done.</p>
+                <p>Grid also unlocks layout patterns that Flexbox simply can't do cleanly:</p>
+                <ul>
+                    <li>Overlapping elements using explicit row/column placement</li>
+                    <li>Asymmetric layouts (one wide column, one narrow sidebar)</li>
+                    <li>Having items span multiple columns or rows</li>
+                    <li>True two-dimensional alignment where both rows and columns matter</li>
+                </ul>
+
+                <h2>The Rule I Actually Use Day-to-Day</h2>
+                <p>Ask yourself: "Am I thinking about rows AND columns at the same time?" If yes — Grid. If you're only thinking about one direction — Flexbox.</p>
+                <p>And when in doubt, I start with Grid for the outer container and Flexbox for the inner one. Nine times out of ten that covers whatever I'm building.</p>
+
+                <h2>A Note on Nesting</h2>
+                <p>Don't be afraid to nest them. A Grid layout where each cell contains a Flex component is completely normal — and it's often the cleanest solution. There's no penalty for mixing them, and forcing one approach to do the job of both leads to unnecessarily complex code.</p>
+                <p>The goal is readable, maintainable CSS. Use whichever tool makes that easier for the problem in front of you.</p>
+
+            </div>
+
+            <footer class="article-footer">
+                <a href="blog.html" class="article-back-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                    Back to all articles
+                </a>
+            </footer>
+
+        </article>
+    </main>
+</body>
+</html>
