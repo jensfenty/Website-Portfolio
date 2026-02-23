@@ -25,11 +25,12 @@
         <nav class="top-nav" aria-label="Main navigation">
             <div class="nav-container">
                 <a href="contact.html" class="logo" aria-label="Ericka Gavino – go to contact page">
-                    <img src="IMG/ERICKA-GAVINO-PERSONAL-LOGO.png" alt="Ericka Gavino personal logo" class="logo-image">
+                    <img src="IMG/ERICKA-GAVINO-PERSONAL-LOGO.png" alt="Ericka Gavino personal logo" class="logo-image logo-dark">
+                    <img src="IMG/EG-LOGO-BLUE.png" alt="Ericka Gavino personal logo" class="logo-image logo-light">
                 </a>
                 <ul class="nav-links">
                     <li><a href="about.html" aria-current="page">About</a></li>
-                    <li><a href="index.html#projects">Experience</a></li>
+                    <li><a href="index.html">Experience</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="blog.html">Blogs</a></li>
                 </ul>
@@ -50,6 +51,17 @@
             <p class="about-hello">Hello!</p>
             <h1 class="about-name">I'm Ericka Gavino</h1>
             <p class="about-bio">I'm Eri, an IT student with a passion for the sweet spot where clean code meets thoughtful design. By pairing Front-End expertise with a UI/UX heart, I don't just build websites, I craft digital spaces that feel effortless and alive. I'm driven by the magic of turning a spark of an idea into a seamless, high-performing reality that truly connects with people.</p>
+            <div class="about-socials">
+                <a href="https://www.linkedin.com/in/ericka-gavino-813b1a25b" target="_blank" rel="noopener noreferrer" class="contact-social-icon" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://github.com/jensfenty" target="_blank" rel="noopener noreferrer" class="contact-social-icon" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&to=erickaferguson22@gmail.com&su=Hello%20Ericka%20Mae%20Gavino" target="_blank" rel="noopener noreferrer" class="contact-social-icon" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+            </div>
         </div>
 
         <!-- Right: Portrait -->
@@ -68,18 +80,18 @@
     <section class="skills-section" aria-labelledby="skills-heading">
         <h2 class="skills-title" id="skills-heading">Skills</h2>
 
-        <div class="skills-split">
-            <!-- Absolute center line (same as timeline) -->
-            <div class="skills-line">
+        <div class="skills-table" id="skillsTable">
+
+            <!-- Animated vertical line -->
+            <div class="skills-line-track">
                 <div class="skills-line-fill" id="skillsLineFill"></div>
-                <div class="skill-dot top-dot" id="topDot"></div>
-                <div class="skill-dot bottom-dot" id="bottomDot"></div>
             </div>
 
-            <!-- Technical Skills - Left (col 1) -->
-            <div class="skills-col skills-col-left" id="techSkills">
-                <h3 class="skills-col-title">Technical Skills</h3>
-                <div class="skills-tags">
+            <!-- Technical Skills -->
+            <div class="skills-row" data-index="0">
+                <div class="skills-row-label">Technical Skills</div>
+                <div class="skills-row-dot" id="skillsDot0"></div>
+                <div class="skills-row-content">
                     <span class="skill-tag">HTML</span>
                     <span class="skill-tag">CSS</span>
                     <span class="skill-tag">JavaScript</span>
@@ -90,13 +102,11 @@
                 </div>
             </div>
 
-            <!-- Spacer for center col (col 2) -->
-            <div></div>
-
-            <!-- Soft Skills - Right (col 3) -->
-            <div class="skills-col skills-col-right" id="softSkills">
-                <h3 class="skills-col-title">Soft Skills</h3>
-                <div class="skills-tags">
+            <!-- Soft Skills -->
+            <div class="skills-row" data-index="1">
+                <div class="skills-row-label">Soft Skills</div>
+                <div class="skills-row-dot" id="skillsDot1"></div>
+                <div class="skills-row-content">
                     <span class="skill-tag">Attention to Detail</span>
                     <span class="skill-tag">Organized</span>
                     <span class="skill-tag">Communicator</span>
@@ -104,73 +114,35 @@
                     <span class="skill-tag">Creative Problem Solver</span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Tools Section -->
-    <section class="tools-section" aria-labelledby="tools-heading">
-        <h2 class="tools-title" id="tools-heading">Tools</h2>
-
-        <div class="tools-wrapper">
-            <!-- Center Line -->
-            <div class="tools-line">
-                <div class="tools-progress" id="toolsProgress"></div>
-            </div>
-
-            <!-- VS Code -->
-            <div class="tools-item" data-index="0">
-                <div class="tools-left">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code logo" class="tool-logo">
-                </div>
-                <div class="tools-dot"></div>
-                <div class="tools-right">
-                    <h3 class="tool-name">VS Code</h3>
-                </div>
-            </div>
-
-            <!-- Figma -->
-            <div class="tools-item" data-index="1">
-                <div class="tools-left">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma logo" class="tool-logo">
-                </div>
-                <div class="tools-dot"></div>
-                <div class="tools-right">
-                    <h3 class="tool-name">Figma</h3>
+            <!-- Tools -->
+            <div class="skills-row" data-index="2">
+                <div class="skills-row-label">Tools</div>
+                <div class="skills-row-dot" id="skillsDot2"></div>
+                <div class="skills-row-content skills-row-tools">
+                    <div class="tool-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code" class="tool-pill-logo">
+                        <span>VS Code</span>
+                    </div>
+                    <div class="tool-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma" class="tool-pill-logo">
+                        <span>Figma</span>
+                    </div>
+                    <div class="tool-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva" class="tool-pill-logo">
+                        <span>Canva</span>
+                    </div>
+                    <div class="tool-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" class="tool-pill-logo">
+                        <span>Git</span>
+                    </div>
+                    <div class="tool-pill">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="tool-pill-logo tool-pill-logo-invert">
+                        <span>GitHub</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Canva -->
-            <div class="tools-item" data-index="2">
-                <div class="tools-left">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/canva/canva-original.svg" alt="Canva logo" class="tool-logo">
-                </div>
-                <div class="tools-dot"></div>
-                <div class="tools-right">
-                    <h3 class="tool-name">Canva</h3>
-                </div>
-            </div>
-
-            <!-- Git -->
-            <div class="tools-item" data-index="3">
-                <div class="tools-left">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git logo" class="tool-logo">
-                </div>
-                <div class="tools-dot"></div>
-                <div class="tools-right">
-                    <h3 class="tool-name">Git</h3>
-                </div>
-            </div>
-
-            <!-- GitHub -->
-            <div class="tools-item" data-index="4">
-                <div class="tools-left">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub logo" class="tool-logo tool-logo-invert">
-                </div>
-                <div class="tools-dot"></div>
-                <div class="tools-right">
-                    <h3 class="tool-name">GitHub</h3>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -309,24 +281,20 @@
         const items = document.querySelectorAll('.timeline-item');
         const section = document.querySelector('.timeline-wrapper');
 
-        // Tools animation
-        const toolsProgress = document.getElementById('toolsProgress');
-        const toolsItems = document.querySelectorAll('.tools-item');
-        const toolsSection = document.querySelector('.tools-wrapper');
-
         // Skills animation
         const skillsFill = document.getElementById('skillsLineFill');
-        const topDot = document.getElementById('topDot');
-        const bottomDot = document.getElementById('bottomDot');
-        const techSkills = document.getElementById('techSkills');
-        const softSkills = document.getElementById('softSkills');
-        const skillsWrapper = document.querySelector('.skills-split');
+        const skillsRows = document.querySelectorAll('.skills-row');
+        const skillsTable = document.getElementById('skillsTable');
+
+        // Resume animation — declared here, resolved after DOM is ready
+        let resumeFill, resumeRow, resumeDot, resumeWrap;
 
         function updateTimeline() {
+            const scrolled = window.scrollY + window.innerHeight * 0.5;
+
             // Timeline progress
             const sectionTop = section.getBoundingClientRect().top + window.scrollY;
             const sectionHeight = section.scrollHeight;
-            const scrolled = window.scrollY + window.innerHeight * 0.5;
             const raw = (scrolled - sectionTop) / sectionHeight;
             const pct = Math.min(Math.max(raw, 0), 1) * 100;
             progress.style.height = pct + '%';
@@ -343,92 +311,99 @@
                 }
             });
 
-            // Tools progress
-            const toolsTop = toolsSection.getBoundingClientRect().top + window.scrollY;
-            const toolsHeight = toolsSection.scrollHeight;
-            const toolsRaw = (scrolled - toolsTop) / toolsHeight;
-            const toolsPct = Math.min(Math.max(toolsRaw, 0), 1) * 100;
-            toolsProgress.style.height = toolsPct + '%';
-
-            toolsItems.forEach((item) => {
-                const dot = item.querySelector('.tools-dot');
-                const rect = item.getBoundingClientRect();
-                if (rect.top < window.innerHeight * 0.6) {
-                    item.classList.add('active');
-                    dot.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                    dot.classList.remove('active');
-                }
-            });
-
             // Skills line progress
-            const skillsTop = skillsWrapper.getBoundingClientRect().top + window.scrollY;
-            const skillsHeight = skillsWrapper.scrollHeight;
+            const skillsTop = skillsTable.getBoundingClientRect().top + window.scrollY;
+            const skillsHeight = skillsTable.scrollHeight;
             const skillsRaw = (scrolled - skillsTop) / skillsHeight;
             const skillsPct = Math.min(Math.max(skillsRaw, 0), 1) * 100;
             skillsFill.style.height = skillsPct + '%';
 
-            const skillsRect = skillsWrapper.getBoundingClientRect();
-            if (skillsRect.top < window.innerHeight * 0.7) {
-                topDot.classList.add('active');
-                techSkills.classList.add('active');
-                softSkills.classList.add('active');
-            }
-            if (skillsRect.bottom < window.innerHeight * 0.7) {
-                bottomDot.classList.add('active');
+            skillsRows.forEach((row) => {
+                const idx = row.getAttribute('data-index');
+                const dot = document.getElementById('skillsDot' + idx);
+                const rect = row.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.65) {
+                    row.classList.add('active');
+                    if (dot) { dot.classList.add('active'); }
+                } else {
+                    row.classList.remove('active');
+                    if (dot) { dot.classList.remove('active'); }
+                }
+            });
+
+            // Resume line progress (use full viewport height so line reaches bottom)
+            const scrolledFull = window.scrollY + window.innerHeight;
+            const resumeTop = resumeWrap.getBoundingClientRect().top + window.scrollY;
+            const resumeHeight = resumeWrap.scrollHeight;
+            const resumeRaw = (scrolledFull - resumeTop) / resumeHeight;
+            const resumePct = Math.min(Math.max(resumeRaw, 0), 1) * 100;
+            resumeFill.style.height = resumePct + '%';
+
+            const resumeRect = resumeRow.getBoundingClientRect();
+            if (resumeRect.top < window.innerHeight * 0.9) {
+                resumeRow.classList.add('active');
+                resumeDot.classList.add('active');
+            } else {
+                resumeRow.classList.remove('active');
+                resumeDot.classList.remove('active');
             }
         }
 
         window.addEventListener('scroll', updateTimeline);
+        window.addEventListener('DOMContentLoaded', function() {
+            resumeFill = document.getElementById('resumeLineFill');
+            resumeRow  = document.getElementById('resumeRow');
+            resumeDot  = document.getElementById('resumeDot');
+            resumeWrap = document.getElementById('resumeTimelineWrap');
+            updateTimeline();
+        });
         updateTimeline();
     </script>
 
     <!-- Resume Section -->
     <section class="resume-section" aria-labelledby="resume-heading">
 
-        <div class="resume-top">
-            <h2 class="resume-section-title" id="resume-heading">Resume</h2>
-            <a
-                href="IMG/Ericka-Gavino-Resume.pdf"
-                download="Ericka-Gavino-Resume.pdf"
-                class="resume-download-btn"
-                aria-label="Download Ericka Gavino's resume as PDF"
-            >
-                <span class="download-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7 10 12 15 17 10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                </span>
-                Download Resume
-            </a>
-        </div>
+        <h2 class="resume-section-title" id="resume-heading">Resume</h2>
 
-        <!-- PDF Viewer -->
-        <div class="resume-viewer-wrap">
-            <iframe
-                src="IMG/Ericka-Gavino-Resume.pdf#toolbar=0&navpanes=0&scrollbar=0"
-                class="resume-iframe"
-                title="Ericka Gavino – Resume PDF"
-                aria-label="Resume PDF viewer"
-                loading="lazy"
-            ></iframe>
-            <div class="resume-fallback" id="resumeFallback">
-                <p>Your browser can't preview PDFs inline.</p>
-                <a href="IMG/Ericka-Gavino-Resume.pdf" download="Ericka-Gavino-Resume.pdf" class="resume-download-btn small">
-                    <span class="download-icon" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                    </span>
-                    Download PDF Instead
-                </a>
+        <div class="resume-timeline-wrap" id="resumeTimelineWrap">
+
+            <!-- Animated vertical line -->
+            <div class="resume-line-track">
+                <div class="resume-line-fill" id="resumeLineFill"></div>
+            </div>
+
+            <!-- Row -->
+            <div class="resume-row" id="resumeRow">
+
+                <!-- Left: label + download -->
+                <div class="resume-row-left">
+                    <div class="resume-row-label">Resume</div>
+                    <a
+                        href="IMG/Ericka-Gavino-Resume.pdf"
+                        download="Ericka-Gavino-Resume.pdf"
+                        class="resume-download-btn"
+                        aria-label="Download Ericka Gavino's resume as PDF"
+                    >
+                        <span class="download-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                        </span>
+                        Download Resume
+                    </a>
+                </div>
+
+                <!-- Center dot -->
+                <div class="resume-row-dot" id="resumeDot"></div>
+
+                <!-- Right: Resume image -->
+                <div class="resume-row-right">
+                    <img src="IMG/Ericka-Mae-Gavino-Resume.png" alt="Ericka Gavino Resume" class="resume-preview-img">
+                </div>
+
             </div>
         </div>
 
@@ -452,5 +427,6 @@
             });
         })();
     </script>
+    <script src="animations.js" defer></script>
 </body>
 </html>
