@@ -1651,6 +1651,16 @@ body {
     .hero-title {
         font-size: 2.8rem;
     }
+
+    .hero-title-wrapper {
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 960px) {
+    .resume-section {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1764,15 +1774,23 @@ body {
     }
 
     .hero {
-        padding: 140px 30px 80px;
+        padding: 132px 30px 36px;
     }
 
     .hero-title {
         font-size: 2.2rem;
     }
 
+    .hero-subtitle {
+        margin-bottom: 14px;
+    }
+
+    .hero-title-wrapper {
+        min-height: 140px;
+    }
+
     .projects {
-        padding: 40px 20px 60px;
+        padding: 16px 20px 60px;
     }
 
     .accordion-carousel {
@@ -1831,10 +1849,6 @@ body {
 
     .timeline-section {
         padding-bottom: 36px;
-    }
-
-    .resume-section {
-        padding-top: 36px;
     }
 
     .timeline-item,
@@ -2641,6 +2655,24 @@ body {
         padding-right: 18px;
     }
 
+    .hero {
+        padding-top: 124px;
+        padding-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 10px;
+    }
+
+    .hero-title {
+        font-size: 1.95rem;
+        margin-bottom: 12px;
+    }
+
+    .hero-title-wrapper {
+        min-height: 108px;
+    }
+
     .about-section {
         padding: 96px 18px 24px;
     }
@@ -2738,6 +2770,13 @@ body {
     .resume-file-label {
         font-size: 0.8rem;
     }
+
+    .timeline-item[data-index="5"] .hubspot-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2816,6 +2855,16 @@ body {
         font-size: 1.65rem;
     }
 
+    .timeline-item[data-index="5"] .hubspot-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        max-width: 320px;
+    }
+
+    .timeline-item[data-index="5"] .hubspot-badge {
+        padding: 18px 12px;
+    }
+
     .blog-featured-excerpt,
     .blog-card-excerpt,
     .article-body p,
@@ -2831,16 +2880,13 @@ body {
         padding-bottom: 24px;
     }
 
-    .resume-section {
-        padding-top: 24px;
-    }
-
     .resume-actions {
         width: 100%;
     }
 
     .resume-row {
         gap: 12px;
+        padding-top: 8px;
     }
 
     .resume-row-left {
@@ -2848,8 +2894,9 @@ body {
         gap: 12px;
     }
 
-    .resume-row-label {
-        text-align: center;
+    .resume-row-label,
+    .resume-row-right {
+        display: none;
     }
 
     .resume-download-btn {
@@ -2894,6 +2941,12 @@ body {
     gap: 18px;
     padding: 28px 24px;
     text-align: center;
+}
+
+@media (max-width: 960px) {
+    .resume-section {
+        display: none;
+    }
 }
 
 @keyframes contactCardFloat {
@@ -2951,7 +3004,10 @@ body {
 .resume-section-title {
     font-size: 2rem;
     font-weight: 700;
-    text-align: center;
+    text-align: left;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Timeline-style wrapper */
