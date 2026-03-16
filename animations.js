@@ -22,7 +22,19 @@
     '.article-lead',
     '.article-body h2',
     '.article-footer',
-    '.toc-sidebar'
+    '.toc-sidebar',
+    '.contact-heading',
+    '.contact-subtext',
+    '.contact-info-item',
+    '.contact-social-icon',
+    '.form-group',
+    '.help-check',
+    '.submit-btn',
+    '.form-success',
+    '.home-stage-kicker',
+    '.home-stage-name',
+    '.home-stage-roles',
+    '.home-stage-intro'
   ];
 
   // Slide from left
@@ -68,7 +80,37 @@
     });
   }
 
+  function initMobileNav() {
+    var navContainer = document.querySelector('.nav-container');
+    var navToggle = document.querySelector('.nav-toggle');
+    var navLinks = document.querySelector('.nav-links');
+
+    if (!navContainer || !navToggle || !navLinks) return;
+
+    function setOpen(isOpen) {
+      navContainer.classList.toggle('nav-open', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    navToggle.addEventListener('click', function () {
+      setOpen(!navContainer.classList.contains('nav-open'));
+    });
+
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        setOpen(false);
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768) {
+        setOpen(false);
+      }
+    });
+  }
+
   function init() {
+    initMobileNav();
     markElements(UP, 'up');
     markElements(LEFT, 'left');
     markElements(RIGHT, 'right');

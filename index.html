@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ericka Gavino is an aspiring Front-End Developer and UI/UX Designer based in the Philippines, creating responsive websites and user-centered digital experiences.">
+    <meta name="description" content="Ericka Gavino is a Front-End Developer and UI/UX Designer creating polished, user-centered websites and digital experiences.">
     <meta name="author" content="Ericka Gavino">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Ericka Gavino | Front-End & UI/UX Developer">
-    <meta property="og:description" content="Portfolio of Ericka Gavino – aspiring Front-End Developer and UI/UX Designer based in the Philippines.">
+    <meta property="og:title" content="Ericka Gavino | Front-End Developer and UI/UX Designer">
+    <meta property="og:description" content="Portfolio homepage of Ericka Gavino, featuring front-end development, UI/UX design, and selected projects.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="IMG/ERICKA-GAVINO-PORTRAIT.png">
-    <title>Ericka Gavino | Front-End &amp; UI/UX Developer</title>
+    <title>Ericka Gavino | Home</title>
+    <link rel="icon" type="image/png" href="IMG/ERICKA-GAVINO-PERSONAL-LOGO.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,22 +21,26 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Top Navigation -->
     <header role="banner">
         <nav class="top-nav" aria-label="Main navigation">
             <div class="nav-container">
-                <a href="contact.html" class="logo" aria-label="Ericka Gavino – go to contact page" aria-current="page">
-                    <img src="IMG/ERICKA-GAVINO-PERSONAL-LOGO.png" alt="Ericka Gavino personal logo" class="logo-image logo-dark">
-                    <img src="IMG/EG-LOGO-BLUE.png" alt="Ericka Gavino personal logo" class="logo-image logo-light">
+                <a href="index.html" class="logo" aria-label="Ericka Gavino - go to home page">
+                    <img src="IMG/ERICKA-GAVINO-PERSONAL-LOGO.png" alt="Ericka Gavino personal logo" class="logo-image logo-dark" width="500" height="500" decoding="async">
+                    <img src="IMG/EG-LOGO-BLUE.png" alt="Ericka Gavino personal logo" class="logo-image logo-light" width="500" height="500" decoding="async">
                 </a>
                 <ul class="nav-links">
                     <li><a href="about.html">About</a></li>
-                    <li><a href="index.html">Experience</a></li>
+                    <li><a href="experience.html">Experience</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="blog.html">Blogs</a></li>
                 </ul>
-                <a href="https://mail.google.com/mail/?view=cm&to=erickaferguson22@gmail.com&su=Hello%20Ericka%20Mae%20Gavino" target="_blank" rel="noopener noreferrer" class="cta-button">Get in Touch</a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+                <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </button>
+                <a href="contact.html" class="cta-button">Contact Me</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark mode">
                     <span class="theme-toggle-icon">🌙</span>
                 </button>
             </div>
@@ -43,157 +48,77 @@
     </header>
 
     <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="hero-heading">
-        <p class="hero-subtitle">Welcome To My Digital Space!</p>
-        <div class="hero-title-wrapper">
-            <h1 class="hero-title description-default" id="hero-heading">Aspiring Front-End <br>&amp; UI/UX Developer<br>Based in the Philippines</h1>
-            <h1 class="hero-title description-hover" aria-hidden="true">I design the experience as a UI/UX designer, then build it right as a web developer.</h1>
-        </div>
-    </section>
+        <section class="home-stage" aria-labelledby="home-heading">
+            <div class="home-stage-bg" aria-hidden="true">
+                <div class="home-stage-noise"></div>
+                <div class="home-stage-glow"></div>
+            </div>
 
-    <!-- Featured Projects Section -->
-    <section class="projects" id="projects" aria-label="Featured Projects">
-        <div class="accordion-carousel">
+            <div class="home-stage-socials" aria-label="Social links">
+                <a href="https://github.com/jensfenty" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 .297C5.373.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.744.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.304-5.467-1.334-5.467-5.93 0-1.31.469-2.38 1.236-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 0 1 3.005-.404c1.02.004 2.046.138 3.005.404 2.29-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.874.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.609-2.807 5.624-5.48 5.921.43.37.823 1.103.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .321.216.694.825.576C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/ericka-gavino-813b1a25b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.447 20.452h-3.554V14.9c0-1.324-.026-3.03-1.847-3.03-1.847 0-2.13 1.444-2.13 2.933v5.649H9.362V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.268 2.37 4.268 5.456v6.285ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452Z"/>
+                    </svg>
+                </a>
+            </div>
 
-            <div class="acc-card active" style="--acc-color: #3d5aa8;">
-                <div class="acc-collapsed">
-                    <span class="acc-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                    </span>
-                    <span class="acc-label">Endless Charms</span>
-                </div>
-                <div class="acc-expanded">
-                    <img src="IMG/ENDLESS-CHARMS-RPOJECT.jpg" alt="Endless Charms" class="acc-img">
-                    <div class="acc-overlay"></div>
-                    <div class="acc-content">
-                        <h3 class="acc-title">Endless Charms</h3>
-                        <p class="acc-meta">Group Project &middot; E-commerce &amp; Web Design</p>
-                        <a href="https://endlesscharms.store/" target="_blank" rel="noopener noreferrer" class="acc-btn">View Project &#8599;</a>
+            <div class="home-stage-inner">
+                <p class="home-stage-kicker">Front-End Developer and UI/UX Designer</p>
+                <h1 class="home-stage-name" id="home-heading">Ericka Gavino</h1>
+
+                <div class="home-stage-roles" aria-label="Professional roles">
+                    <div class="home-role-track" id="homeRoleTrack">
+                        <span class="home-role-frame" id="homeRoleFrame" aria-hidden="true"></span>
+                        <span class="home-role-chip active" data-role="Developer">Developer</span>
+                        <span class="home-role-chip" data-role="UI/UX Designer">UI/UX Designer</span>
+                        <span class="home-role-chip" data-role="Creator">Creator</span>
                     </div>
                 </div>
-            </div>
 
-            <div class="acc-card" style="--acc-color: #5680e0;">
-                <div class="acc-collapsed">
-                    <span class="acc-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-                    </span>
-                    <span class="acc-label">Bean Around Town</span>
+                <p class="home-stage-intro">I create polished web experiences with thoughtful UI, clean front-end execution, and design decisions shaped for real users.</p>
+
+                <div class="home-stage-wave" aria-hidden="true">
+                    <svg viewBox="0 0 1600 320" preserveAspectRatio="none" class="home-stage-wave-svg">
+                        <path d="M-40 170 C120 170, 150 88, 320 88 S560 252, 760 252 1030 82, 1240 82 1450 176, 1640 176"></path>
+                        <path d="M-40 180 C120 180, 150 102, 320 102 S560 238, 760 238 1030 96, 1240 96 1450 184, 1640 184"></path>
+                        <path d="M-40 190 C120 190, 150 116, 320 116 S560 224, 760 224 1030 110, 1240 110 1450 194, 1640 194"></path>
+                        <path d="M-40 200 C120 200, 150 130, 320 130 S560 210, 760 210 1030 124, 1240 124 1450 204, 1640 204"></path>
+                        <path d="M-40 210 C120 210, 150 144, 320 144 S560 196, 760 196 1030 138, 1240 138 1450 214, 1640 214"></path>
+                        <path d="M-40 220 C120 220, 150 156, 320 156 S560 184, 760 184 1030 150, 1240 150 1450 224, 1640 224"></path>
+                    </svg>
                 </div>
-                <div class="acc-expanded">
-                    <img src="IMG/BEAN-AROUND-TOWN-PROJECT.jpg" alt="Bean Around Town" class="acc-img">
-                    <div class="acc-overlay"></div>
-                    <div class="acc-content">
-                        <h3 class="acc-title">Bean Around Town</h3>
-                        <p class="acc-meta">Own Project &middot; Web App &amp; GitHub</p>
-                        <a href="https://github.com/jensfenty/BeanAroundTown.git" target="_blank" rel="noopener noreferrer" class="acc-btn">View Project &#8599;</a>
-                    </div>
-                </div>
+
             </div>
-
-            <div class="acc-card" style="--acc-color: #2a3d6b;">
-                <div class="acc-collapsed">
-                    <span class="acc-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
-                    </span>
-                    <span class="acc-label">ShareSource</span>
-                </div>
-                <div class="acc-expanded">
-                    <img src="IMG/FRAME-RATE-PROJECT.jpg" alt="ShareSource" class="acc-img">
-                    <div class="acc-overlay"></div>
-                    <div class="acc-content">
-                        <h3 class="acc-title">ShareSource</h3>
-                        <p class="acc-meta">Group Project &middot; UI &amp; UX Design</p>
-                        <a href="https://www.figma.com/design/vehoWFoKDB3tPevvnIhdVO/SHARESOURCE?node-id=1-3&t=NT59QPmaQrL3Ks0V-1" target="_blank" rel="noopener noreferrer" class="acc-btn">View Project &#8599;</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Why Hire Me Section -->
-    <section class="why-section" aria-labelledby="why-heading">
-        <div class="why-header">
-            <span class="why-badge">Why Hire Me</span>
-            <h2 class="why-title" id="why-heading">What I bring to<br>the table.</h2>
-            <p class="why-sub">From concept to code — I combine design thinking with front-end development to build experiences that look great and work even better.</p>
-        </div>
-
-        <div class="why-grid">
-
-            <div class="why-card">
-                <span class="why-card-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-                </span>
-                <h3 class="why-card-title">Responsive Development</h3>
-                <p class="why-card-text">I build websites that look and function flawlessly on every device — mobile, tablet, and desktop.</p>
-            </div>
-
-            <div class="why-card">
-                <span class="why-card-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-                </span>
-                <h3 class="why-card-title">UI/UX Design</h3>
-                <p class="why-card-text">Using Figma and user-centered principles, I craft interfaces that are intuitive, accessible, and visually polished.</p>
-            </div>
-
-            <div class="why-card">
-                <span class="why-card-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                </span>
-                <h3 class="why-card-title">Clean Code</h3>
-                <p class="why-card-text">I write semantic, well-structured HTML, CSS, and JavaScript that is easy to maintain and built for performance.</p>
-            </div>
-
-            <div class="why-card">
-                <span class="why-card-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                </span>
-                <h3 class="why-card-title">Fast Turnaround</h3>
-                <p class="why-card-text">Dependable and deadline-driven — I deliver quality work on time without cutting corners on detail or craft.</p>
-            </div>
-
-            <div class="why-card">
-                <span class="why-card-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </span>
-                <h3 class="why-card-title">Collaborative Mindset</h3>
-                <p class="why-card-text">I thrive in team environments and communicate openly, making collaboration smooth from kickoff to launch.</p>
-            </div>
-
-            <div class="why-card">
-                <span class="why-card-icon" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="m5 20 7-18 7 18"/><path d="M8.5 13h7"/></svg>
-                </span>
-                <h3 class="why-card-title">Accessibility First</h3>
-                <p class="why-card-text">Every project I build follows WCAG best practices — ensuring real people of all abilities can use what I create.</p>
-            </div>
-
-        </div>
-    </section>
+        </section>
     </main>
-
-    <script>
-        const accCards = document.querySelectorAll('.acc-card');
-
-        accCards.forEach(card => {
-            card.addEventListener('click', function () {
-                if (this.classList.contains('active')) return;
-                accCards.forEach(c => c.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
 
     <script>
         (function() {
             const btn = document.getElementById('themeToggle');
             const icon = btn.querySelector('.theme-toggle-icon');
+            const roleFrame = document.getElementById('homeRoleFrame');
+            const roles = Array.from(document.querySelectorAll('.home-role-chip'));
+            let roleIndex = 0;
             function apply(mode) {
                 document.documentElement.classList.toggle('light-mode', mode === 'light');
                 icon.textContent = mode === 'light' ? '\u2600\ufe0f' : '\ud83c\udf19';
+            }
+            function setActiveRole(index) {
+                roles.forEach((role, i) => {
+                    role.classList.toggle('active', i === index);
+                });
+                if (roleFrame && roles[index]) {
+                    const activeRole = roles[index];
+                    const frameWidth = activeRole.offsetWidth + 28;
+                    const frameX = activeRole.offsetLeft + (activeRole.offsetWidth / 2) - (frameWidth / 2);
+                    roleFrame.style.width = frameWidth + 'px';
+                    roleFrame.style.transform = 'translateX(' + frameX + 'px) translateY(-50%)';
+                }
             }
             apply(localStorage.getItem('theme') || 'dark');
             btn.addEventListener('click', function() {
@@ -201,6 +126,13 @@
                 localStorage.setItem('theme', next);
                 apply(next);
             });
+            if (roles.length) {
+                setActiveRole(roleIndex);
+                window.setInterval(function() {
+                    roleIndex = (roleIndex + 1) % roles.length;
+                    setActiveRole(roleIndex);
+                }, 3000);
+            }
         })();
     </script>
     <script src="animations.js" defer></script>
